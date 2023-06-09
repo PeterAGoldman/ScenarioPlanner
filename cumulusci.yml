@@ -1,0 +1,26 @@
+minimum_cumulusci_version: '3.76.0'
+project:
+    name: ScenarioPlanner
+    package:
+        name: ScenarioPlanner
+        namespace: ScenarioPlanner
+        api_version: '58'
+    git:
+        default_branch: 'main'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/ScenarioPlanner/tests
+            options:
+                outputdir: robot/ScenarioPlanner/results
+
+    robot_testdoc:
+        options:
+            path: robot/ScenarioPlanner/tests
+            output: robot/ScenarioPlanner/doc/ScenarioPlanner_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
