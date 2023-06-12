@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Full Corporate</fullName>
+        <default>true</default>
+        <label>Full Corporate</label>
+    </customValue>
+    <customValue>
+        <fullName>Holding Company</fullName>
+        <default>false</default>
+        <label>Holding Company</label>
+    </customValue>
+    <customValue>
+        <fullName>General</fullName>
+        <default>false</default>
+        <label>General</label>
+    </customValue>
+    <customValue>
+        <fullName>ESP Warehouse HTL</fullName>
+        <default>false</default>
+        <label>ESP Warehouse HTL</label>
+    </customValue>
+    <customValue>
+        <fullName>France Rail Cargo</fullName>
+        <default>false</default>
+        <label>France Rail Cargo</label>
+    </customValue>
+    <customValue>
+        <fullName>Marketing</fullName>
+        <default>false</default>
+        <label>Marketing</label>
+    </customValue>
+    <customValue>
+        <fullName>AMER Sales</fullName>
+        <default>false</default>
+        <label>AMER Sales</label>
+    </customValue>
+    <customValue>
+        <fullName>APAC Sales</fullName>
+        <default>false</default>
+        <label>APAC Sales</label>
+    </customValue>
+    <customValue>
+        <fullName>EMEA Sales</fullName>
+        <default>false</default>
+        <label>EMEA Sales</label>
+    </customValue>
+    <customValue>
+        <fullName>AMER Operations</fullName>
+        <default>false</default>
+        <label>AMER Operations</label>
+    </customValue>
+    <customValue>
+        <fullName>APAC Operations</fullName>
+        <default>false</default>
+        <label>APAC Operations</label>
+    </customValue>
+    <customValue>
+        <fullName>EMEA Operations</fullName>
+        <default>false</default>
+        <label>EMEA Operations</label>
+    </customValue>
+    <customValue>
+        <fullName>Magatzem Espana</fullName>
+        <default>false</default>
+        <label>Magatzem Espana</label>
+    </customValue>
+    <masterLabel>SP Business Units</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

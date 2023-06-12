@@ -1,0 +1,261 @@
+{
+  "version" : "57.0",
+  "nodes" : {
+    "LOAD_DATASET0" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "OwnerId", "Name", "CreatedDate", "CreatedById", "LastModifiedDate", "LastModifiedById", "SystemModstamp", "LastViewedDate", "LastReferencedDate", "AdvAcctForecastSetPartnerId", "AccountId", "PeriodId", "Status", "EmissionsActivityId", "Revenue", "Headcount", "TotalFloorArea", "ProcurementSpend", "TargetEmissions", "TargetCompensatedEmissions", "TargetRenewableEnergyPct", "ActualEmissions", "ActualMarketBasedEmissions", "ActualLocationBasedEmissions", "ActualEnergyConsumption", "ActualRenewableEnergyCnsmpPct", "ActualEmissionsIntensity", "ForcstRenewableEnergyCnsmpPct", "ForecastedEnergyConsumption", "ForecastedMarketBasedEmssn", "ForecastedLocationBasedEmssn", "ForcstEmssnIntensityRdctnPct", "ForecastedEmissions", "ForecastedEmissionsOverride", "PlnOperationalEmissionsRdctn", "PlnSupplierEmissionsRdctn", "FinalForecastedEmissions", "ForecastedEmissionsIntensity", "RequiredCarbonCredits", "PlannedCarbonCredits", "NetEmissionsForecast", "CarbonCreditCost", "RequiredCarbonCreditsInvst", "PlannedCarbonCreditsInvst", "OtherApplnForecastedEmissions", "Business_Unit__c", "SP_Year_from_Period__c" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "EmissionsForecastFact",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "EmissionsForecastFact"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "LOAD_DATASET1" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "Name", "CreatedDate", "CreatedById", "LastModifiedDate", "LastModifiedById", "SystemModstamp", "LastActivityDate", "LastViewedDate", "LastReferencedDate", "Scope_1_Baseline_Emissions__c", "Scope_2_MB_Baseline_Emissions__c", "Scope_2_LB_Baseline_Emissions__c", "Scope_3_Baseline_Emissions__c", "Scope_1_Scenario_Emissions__c", "Scope_2_MB_Scenario_Emissions__c", "Scope_2_LB_Scenario_Emissions__c", "Scope_3_Scenario_Emissions__c", "Total_Baseline_Emissions_tCO2e__c", "Total_Scenario_Emissions_tCO2e__c", "Total_Scenario_Emissions_Savings_tCO2e__c", "Total_Scenario_Emissions_Savings__c", "Scenario_Model_Input__c", "ESG_Initiative__c", "Scenario_Model__c", "Scenario_Model_Input_Name__c", "Abatement_Cost_per_tCO2e_Saved__c", "Period_Year__c" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "Scenario_Model_Input_Period__c",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "Scenario_Model_Input_Period__c"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "JOIN0" : {
+      "action" : "join",
+      "sources" : [ "LOAD_DATASET1", "LOAD_DATASET0" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "Period_Year__c" ],
+        "rightQualifier" : "EmissionsF",
+        "rightKeys" : [ "SP_Year_from_Period__c" ]
+      }
+    },
+    "FORMULA0" : {
+      "action" : "computeRelative",
+      "sources" : [ "JOIN0" ],
+      "parameters" : {
+        "partitionBy" : [ "Period_Year__c" ],
+        "orderBy" : [ {
+          "fieldName" : "Period_Year__c",
+          "direction" : "ASC"
+        } ],
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Scenario_Emissions_tCO2e",
+          "label" : "Scenario Emissions (tCO2e)",
+          "formulaExpression" : "\"EmissionsF.ForecastedEmissions\" - Total_Scenario_Emissions_Savings_tCO2e__c",
+          "precision" : 16,
+          "scale" : 2,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "EXTRACT0" : {
+      "action" : "extractGrains",
+      "sources" : [ "FORMULA0" ],
+      "parameters" : {
+        "grainExtractions" : [ ]
+      }
+    },
+    "AGGREGATE1" : {
+      "action" : "aggregate",
+      "sources" : [ "EXTRACT0" ],
+      "parameters" : {
+        "aggregations" : [ {
+          "action" : "SUM",
+          "source" : "EmissionsF.ForecastedEmissions",
+          "name" : "SUM_EmissionsF.ForecastedEmissions",
+          "label" : "Sum of Forecasted Emissions (tCO2e)"
+        }, {
+          "action" : "SUM",
+          "source" : "Total_Scenario_Emissions_Savings_tCO2e__c",
+          "name" : "SUM_Total_Scenario_Emissions_Savings_tCO2e__c",
+          "label" : "Sum of Total Scenario Emissions Savings (tCO2e)"
+        }, {
+          "action" : "SUM",
+          "source" : "Scenario_Emissions_tCO2e",
+          "name" : "SUM_Scenario_Emissions_tCO2e",
+          "label" : "Sum of Scenario Emissions (tCO2e)"
+        }, {
+          "action" : "SUM",
+          "source" : "EmissionsF.TargetEmissions",
+          "name" : "SUM_EmissionsF.TargetEmissions",
+          "label" : "Sum of Target Emissions (tCO2e)"
+        }, {
+          "action" : "SUM",
+          "source" : "Abatement_Cost_per_tCO2e_Saved__c",
+          "name" : "SUM_Abatement_Cost_per_tCO2e_Saved__c",
+          "label" : "Sum of Abatement Cost per tCO2e Saved"
+        } ],
+        "groupings" : [ "Period_Year__c", "ESG_Initiative__c", "Scenario_Model__c", "Scenario_Model_Input_Name__c" ],
+        "pivots" : [ ],
+        "nodeType" : "STANDARD"
+      }
+    },
+    "OUTPUT0" : {
+      "action" : "save",
+      "sources" : [ "AGGREGATE1" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Scenario Planner Scenario Dataset",
+          "name" : "Scenario_Planner_Scenario_Dataset",
+          "folderName" : "Scenario_Planner"
+        },
+        "measuresToCurrencies" : [ ]
+      }
+    },
+    "OUTPUT1" : {
+      "action" : "save",
+      "sources" : [ "LOAD_DATASET0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Scenario Planner Forecast Dataset",
+          "name" : "Scenario_Planner_Forecast_Dataset",
+          "folderName" : "Scenario_Planner"
+        },
+        "measuresToCurrencies" : [ ]
+      }
+    },
+    "OUTPUT2" : {
+      "action" : "save",
+      "sources" : [ "LOAD_DATASET1" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Scenario Planner Period Dataset",
+          "name" : "Scenario_Planner_Period_Dataset",
+          "folderName" : "Scenario_Planner"
+        }
+      }
+    }
+  },
+  "ui" : {
+    "nodes" : {
+      "LOAD_DATASET0" : {
+        "label" : "EmissionsForecastFact",
+        "type" : "LOAD_DATASET",
+        "top" : 112,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "LOAD_DATASET1" : {
+        "label" : "Scenario_Model_Input_Period__c",
+        "type" : "LOAD_DATASET",
+        "top" : 252,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "JOIN0" : {
+        "label" : "Join on Year",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 252,
+        "left" : 252
+      },
+      "TRANSFORM0" : {
+        "label" : "Transform Data",
+        "description" : "",
+        "type" : "TRANSFORM",
+        "top" : 252,
+        "left" : 392,
+        "graph" : {
+          "FORMULA0" : {
+            "label" : "Forecast Emissions - Scenario Emissions Savings"
+          }
+        },
+        "connectors" : [ ]
+      },
+      "AGGREGATE0" : {
+        "label" : "Aggregate by Year",
+        "description" : "",
+        "type" : "AGGREGATE",
+        "top" : 252,
+        "left" : 532,
+        "graph" : {
+          "EXTRACT0" : null,
+          "AGGREGATE1" : null
+        },
+        "connectors" : [ {
+          "source" : "EXTRACT0",
+          "target" : "AGGREGATE1"
+        } ]
+      },
+      "OUTPUT0" : {
+        "label" : "Output to Dataset",
+        "description" : "",
+        "type" : "OUTPUT",
+        "top" : 252,
+        "left" : 672
+      },
+      "OUTPUT1" : {
+        "label" : "Output 1",
+        "type" : "OUTPUT",
+        "top" : 112.30000000000001,
+        "left" : 252
+      },
+      "OUTPUT2" : {
+        "label" : "Output 2",
+        "type" : "OUTPUT",
+        "top" : 392.3,
+        "left" : 252
+      }
+    },
+    "connectors" : [ {
+      "source" : "LOAD_DATASET1",
+      "target" : "JOIN0"
+    }, {
+      "source" : "LOAD_DATASET0",
+      "target" : "JOIN0"
+    }, {
+      "source" : "JOIN0",
+      "target" : "TRANSFORM0"
+    }, {
+      "source" : "TRANSFORM0",
+      "target" : "AGGREGATE0"
+    }, {
+      "source" : "AGGREGATE0",
+      "target" : "OUTPUT0"
+    }, {
+      "source" : "LOAD_DATASET0",
+      "target" : "OUTPUT1"
+    }, {
+      "source" : "LOAD_DATASET1",
+      "target" : "OUTPUT2"
+    } ],
+    "hiddenColumns" : [ ]
+  },
+  "runMode" : "full"
+}

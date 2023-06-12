@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveDataset xmlns="http://soap.sforce.com/2006/04/metadata">
+    <application>Scenario_Planner</application>
+    <description>Created from the Scenario Planner Recipe recipe.</description>
+    <masterLabel>Scenario Planner Scenario Dataset</masterLabel>
+    <type>default</type>
+</WaveDataset>

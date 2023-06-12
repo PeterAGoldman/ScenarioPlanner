@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Average_Cost_per_REC__c</fullName>
+        <externalId>false</externalId>
+        <formula>Total_Cost_of_REC_Purchases__c / Number_of_RECs_Applied__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Average Cost per REC</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_RECs_Applied__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of RECs Applied</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Scope_2_MB_Emissions_Offset_from_RECs__c</fullName>
+        <externalId>false</externalId>
+        <formula>Number_of_RECs_Applied__c * Scope_2_MB_Emissions_mWh_Energy__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Scope 2 MB Emissions Offset from RECs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Scope_2_MB_Emissions_mWh_Energy__c</fullName>
+        <externalId>false</externalId>
+        <formula>(Scope2MarketBasedEmssnCmclBld + Scope2MarketBasedEmssnDataCtr)/ ((EnergyUsageCommercialBld + EnergyUsageDataCenters)/1000)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Scope 2 MB Emissions / mWh Energy</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Cost_of_REC_Purchases__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Cost of REC Purchases</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+</CustomObject>

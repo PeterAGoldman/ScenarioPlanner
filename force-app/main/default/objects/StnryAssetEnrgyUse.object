@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Product_Carbon_Footprint__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Product Carbon Footprint</label>
+        <referenceTo>Product_Carbon_Footprint__c</referenceTo>
+        <relationshipLabel>Stationary Asset Energy Uses</relationshipLabel>
+        <relationshipName>Stationary_Asset_Energy_Uses</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+</CustomObject>

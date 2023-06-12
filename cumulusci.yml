@@ -4,10 +4,16 @@ project:
     package:
         name: ScenarioPlanner
         namespace: ScenarioPlanner
-        api_version: '58'
+        api_version: '58.0'
     git:
         default_branch: 'main'
     source_format: sfdx
+
+orgs:
+    scratch:
+        nzc:
+            config_file: config/project-scratch-def.json
+            days: 30
 
 tasks:
     robot:
