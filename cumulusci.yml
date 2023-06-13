@@ -8,6 +8,9 @@ project:
     git:
         default_branch: 'main'
     source_format: sfdx
+    dependencies:
+        # basic config of NZC
+        - github: https://github.com/funfetti/nzc-cci-template
 
 orgs:
     scratch:
@@ -30,3 +33,135 @@ tasks:
     run_tests:
         options:
             required_org_code_coverage_percent: 75
+
+    update_admin_profile:
+        options:
+            record_types:
+                - record_type: "StnryAssetEnvrSrc.Commercial_Building" 
+                  default: true
+                - record_type: "StnryAssetEnvrSrc.Data_Center"
+                - record_type: "BldgEnrgyIntensity.Building_Energy_Intensity"
+                  default: true
+                - record_type: "BldgEnrgyIntensity.Regional_Building_Energy_Intensity"
+                - record_type: "VehicleAssetEmssnSrc.Fleet_Vehicle"
+                  default: true
+                - record_type: "VehicleAssetEmssnSrc.Private_Jet"
+    fileperms:
+        description: Add permissions to sh scripts
+        class_path: cumulusci.tasks.command.Command
+        options:
+            command: chmod +x scripts/QBrix/*.sh 
+
+    qbrix_manual_enable_NetZeroConfigs_configs:
+        description: "Run RPA Scripts"
+        class_path: cumulusci.tasks.command.SalesforceCommand
+        options:
+            command: ./scripts/QBrix/runRPAScript.sh "[xDO] - Net Zero Add Record Type Configs"
+
+    deploy_BEIConfigs:
+        description: Deploy BEI Record Type configs
+        class_path: cumulusci.tasks.salesforce.Deploy
+        group: projectName
+        options:
+            path: unpackaged/buildingEnergyIntensityConfigs
+
+    deploy_StnAssetEnvSourceConfigs:
+        description: Deploy Stationary Asset Env Source Record Type configs
+        class_path: cumulusci.tasks.salesforce.Deploy
+        group: projectName
+        options:
+            path: unpackaged/stationaryAssetEnvSourceConfigs
+
+    deploy_VhcleAssetEmissionSourceConfigs:
+        description: Deploy Vehicle Asset Emission Source Record Type configs
+        class_path: cumulusci.tasks.salesforce.Deploy
+        group: projectName
+        options:
+            path: unpackaged/vehicleAssetEmssnSourceConfigs
+    
+    # data load tasks 
+    load_buildings:
+        description: Loads DATA for Stationary Assets and Stationary Asset Energy Use Records
+        class_path: cumulusci.tasks.bulkdata.LoadData
+        group: nzcData
+        options: 
+            mapping: datasets/bldgs.yml
+            sql_path: datasets/db_bldgs.sql
+
+    load_vehicles:
+        description: Loads DATA for Vehicle Assets and Vehicle Energy Use Records
+        class_path: cumulusci.tasks.bulkdata.LoadData
+        group: nzcData
+        options: 
+            mapping: datasets/vehicles.yml
+            sql_path: datasets/db_vehicles.sql
+
+    load_waste:
+        description: Loads DATA for waste - REQUIRES load buildings first!
+        class_path: cumulusci.tasks.bulkdata.LoadData
+        group: nzcData
+        options: 
+            mapping: datasets/waste.yml
+            sql_path: datasets/db_waste.sql
+
+    load_scope3procurement:
+        description: Loads DATA for Scope 3 Procurement Sets/Items, Procurement EFs, Suppliers, Inflation rates, and other Scope 3 objects
+        class_path: cumulusci.tasks.bulkdata.LoadData
+        group: nzcData
+        options: 
+            mapping: datasets/scope3procurement.yml
+            sql_path: datasets/db_procurement.sql
+
+flows:
+    extract_record_type:
+        group: data
+        description: extracts record type information from org
+        steps:
+            1:
+                task: dx
+                options: 
+                    command: force:data:tree:export
+                    extra: -q "SELECT ID, Name, DeveloperName, SobjectType, Description FROM RecordType" -d datasets 
+    setup_nzc:
+
+        group: net zero
+        description: assigns PSLs, perms, pushes industriessettings file
+        steps: 
+            1:
+                task: assign_permission_set_licenses
+                options:
+                    api_names: NetZeroCloudUserPsl, DataProcessingEnginePsl, ManufacturingAdvancedAccountForecastPsl, TCRMforSustainabilityPsl, EinsteinAnalyticsPlusPsl
+            2:
+                task: assign_permission_sets
+                options:
+                    api_names: NetZeroManager, DataProcessingEngineUser, ManufacturingAdvancedAccountForecastPsl, EinsteinAnalyticsPlusAdmin, TCRMforSustainabilityAdmin
+            3: # turning on Net Zero Setup toggles
+                task: dx
+                options:
+                    command: force:source:deploy
+                    extra: -p unpackaged/settings/Industries.settings-meta.xml
+            4: # loading record types and the custom external id fields
+                task: dx
+                options: 
+                    command: force:source:deploy
+                    #command: force:data:tree:import
+                    extra: --sourcepath "./unpackaged"
+            5: # setting admin perms
+                task: update_admin_profile
+            6: # import record type mappings
+                task:  deploy_BEIConfigs
+            7: # import record type mappings
+                task:  deploy_StnAssetEnvSourceConfigs
+            8: # import record type mappings
+                task:  deploy_VhcleAssetEmissionSourceConfigs
+
+    setup_sp:
+        group: net zero
+        description: This will push unmanaged configuration for SP
+        steps:
+            1:
+                # deploy unmanaged config for SP
+                task: dx
+                options: 
+                    command: force:source:deploy
+                    extra: -d ./unpackaged
