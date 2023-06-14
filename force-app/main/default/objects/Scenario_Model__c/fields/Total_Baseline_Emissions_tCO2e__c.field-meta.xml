@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Baseline_Emissions_tCO2e__c</fullName>
+    <externalId>false</externalId>
+    <formula>Total_Scope_1_Baseline_Emissions__c + Total_Scope_2_MB_Baseline_Emissions__c +  Total_Scope_3_Baseline_Emissions__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Baseline Emissions (tCO2e)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>4</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

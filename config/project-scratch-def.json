@@ -31,6 +31,9 @@
       "sessionSettings": {
         "forceRelogin": false
       }
+    },
+    "languageSettings": {
+      "enableTranslationWorkbench": true
     }
   }
 }

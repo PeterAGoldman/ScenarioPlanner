@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Input_Category__c</fullName>
+    <externalId>false</externalId>
+    <label>Input Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Input_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Purchased Goods and Services</fullName>
+                <default>false</default>
+                <label>Purchased Goods and Services</label>
+            </value>
+            <value>
+                <fullName>Capital Goods</fullName>
+                <default>false</default>
+                <label>Capital Goods</label>
+            </value>
+            <value>
+                <fullName>Fuel and Energy-Related Activities</fullName>
+                <default>false</default>
+                <label>Fuel and Energy-Related Activities</label>
+            </value>
+            <value>
+                <fullName>Upstream Transportation and Distribution</fullName>
+                <default>false</default>
+                <label>Upstream Transportation and Distribution</label>
+            </value>
+            <value>
+                <fullName>Waste Generated In Operations</fullName>
+                <default>false</default>
+                <label>Waste Generated In Operations</label>
+            </value>
+            <value>
+                <fullName>Business Travel</fullName>
+                <default>false</default>
+                <label>Business Travel</label>
+            </value>
+            <value>
+                <fullName>Employee Commuting</fullName>
+                <default>false</default>
+                <label>Employee Commuting</label>
+            </value>
+            <value>
+                <fullName>Upstream Leased Assets</fullName>
+                <default>false</default>
+                <label>Upstream Leased Assets</label>
+            </value>
+            <value>
+                <fullName>Downstream Transportation and Distribution</fullName>
+                <default>false</default>
+                <label>Downstream Transportation and Distribution</label>
+            </value>
+            <value>
+                <fullName>Processing of Sold Products</fullName>
+                <default>false</default>
+                <label>Processing of Sold Products</label>
+            </value>
+            <value>
+                <fullName>Use of Sold Products</fullName>
+                <default>false</default>
+                <label>Use of Sold Products</label>
+            </value>
+            <value>
+                <fullName>End-of-Life Treatment of Sold Products</fullName>
+                <default>false</default>
+                <label>End-of-Life Treatment of Sold Products</label>
+            </value>
+            <value>
+                <fullName>Downstream Leased Assets</fullName>
+                <default>false</default>
+                <label>Downstream Leased Assets</label>
+            </value>
+            <value>
+                <fullName>Franchises</fullName>
+                <default>false</default>
+                <label>Franchises</label>
+            </value>
+            <value>
+                <fullName>Investments</fullName>
+                <default>false</default>
+                <label>Investments</label>
+            </value>
+            <value>
+                <fullName>Commercial Buildings</fullName>
+                <default>false</default>
+                <label>Commercial Buildings</label>
+            </value>
+            <value>
+                <fullName>Data Centers</fullName>
+                <default>false</default>
+                <label>Data Centers</label>
+            </value>
+            <value>
+                <fullName>Fleet Vehicles</fullName>
+                <default>false</default>
+                <label>Fleet Vehicles</label>
+            </value>
+            <value>
+                <fullName>Private Jets</fullName>
+                <default>false</default>
+                <label>Private Jets</label>
+            </value>
+            <value>
+                <fullName>Uncategorized</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Uncategorized</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Scope 3 Emissions</controllingFieldValue>
+            <valueName>Purchased Goods and Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Scope 3 Emissions</controllingFieldValue>
+            <valueName>Capital Goods</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Scope 3 Emissions</controllingFieldValue>
+            <valueName>Fuel and Energy-Related Activities</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Scope 3 Emissions</controllingFieldValue>
+            <valueName>Upstream Transportation and Distribution</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Scope 3 Emissions</controllingFieldValue>
+            <valueName>Waste Generated In Operations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Scope 3 Emissions</controllingFieldValue>
+            <valueName>Business Travel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Scope 3 Emissions</controllingFieldValue>
+            <valueName>Employee Commuting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Scope 3 Emissions</controllingFieldValue>
+            <valueName>Upstream Leased Assets</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Scope 3 Emissions</controllingFieldValue>
+            <valueName>Downstream Transportation and Distribution</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Scope 3 Emissions</controllingFieldValue>
+            <valueName>Processing of Sold Products</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Scope 3 Emissions</controllingFieldValue>
+            <valueName>Use of Sold Products</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Scope 3 Emissions</controllingFieldValue>
+            <valueName>End-of-Life Treatment of Sold Products</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Scope 3 Emissions</controllingFieldValue>
+            <valueName>Downstream Leased Assets</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Scope 3 Emissions</controllingFieldValue>
+            <valueName>Franchises</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Scope 3 Emissions</controllingFieldValue>
+            <valueName>Investments</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Scope 1 Emissions</controllingFieldValue>
+            <controllingFieldValue>Scope 2 Emissions</controllingFieldValue>
+            <valueName>Commercial Buildings</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Scope 1 Emissions</controllingFieldValue>
+            <controllingFieldValue>Scope 2 Emissions</controllingFieldValue>
+            <valueName>Data Centers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Scope 1 Emissions</controllingFieldValue>
+            <controllingFieldValue>Scope 2 Emissions</controllingFieldValue>
+            <valueName>Fleet Vehicles</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Scope 1 Emissions</controllingFieldValue>
+            <controllingFieldValue>Scope 2 Emissions</controllingFieldValue>
+            <valueName>Private Jets</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

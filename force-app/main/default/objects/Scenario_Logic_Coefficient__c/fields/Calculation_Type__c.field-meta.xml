@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Calculation_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Calculation Type</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Emissions</fullName>
+                <default>true</default>
+                <label>Emissions</label>
+            </value>
+            <value>
+                <fullName>Electricity Consumption</fullName>
+                <default>false</default>
+                <label>Electricity Consumption</label>
+            </value>
+            <value>
+                <fullName>Fuel Consumption</fullName>
+                <default>false</default>
+                <label>Fuel Consumption</label>
+            </value>
+            <value>
+                <fullName>Water</fullName>
+                <default>false</default>
+                <label>Water</label>
+            </value>
+            <value>
+                <fullName>Waste</fullName>
+                <default>false</default>
+                <label>Waste</label>
+            </value>
+            <value>
+                <fullName>Renewables</fullName>
+                <default>false</default>
+                <label>Renewables</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Carbon_Footprint__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Product Carbon Footprint</label>
+    <referenceTo>Product_Carbon_Footprint__c</referenceTo>
+    <relationshipLabel>Scope 3 Procurement Summaries</relationshipLabel>
+    <relationshipName>Scope_3_Procurement_Summaries</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

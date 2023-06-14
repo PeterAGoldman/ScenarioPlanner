@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Abatement_Cost_per_tCO2e_Saved__c</columns>
+    <columns>Scenario_Model_Input__c</columns>
+    <columns>Total_Baseline_Emissions_tCO2e__c</columns>
+    <columns>Total_Scenario_Emissions_tCO2e__c</columns>
+    <columns>Total_Scenario_Emissions_Savings__c</columns>
+    <columns>Total_Scenario_Emissions_Savings_tCO2e__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Scenario_Model_Input_Name__c</field>
+        <operation>contains</operation>
+        <value>energy effic</value>
+    </filters>
+    <label>All</label>
+</ListView>

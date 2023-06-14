@@ -8,9 +8,6 @@ project:
     git:
         default_branch: 'main'
     source_format: sfdx
-    dependencies:
-        # basic config of NZC
-        - github: https://github.com/funfetti/nzc-cci-template
 
 orgs:
     scratch:

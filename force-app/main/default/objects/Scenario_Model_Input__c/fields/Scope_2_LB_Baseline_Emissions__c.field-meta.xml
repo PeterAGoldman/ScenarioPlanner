@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Scope_2_LB_Baseline_Emissions__c</fullName>
+    <externalId>false</externalId>
+    <label>Scope 2 LB Baseline Emissions</label>
+    <summarizedField>Scenario_Model_Input_Period__c.Scope_2_LB_Baseline_Emissions__c</summarizedField>
+    <summaryForeignKey>Scenario_Model_Input_Period__c.Scenario_Model_Input__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>
