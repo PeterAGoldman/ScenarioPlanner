@@ -1,3 +1,8 @@
 .DS_Store
 .sfdx
+.vscode
+.sf
+.github
+.cci
+
 
