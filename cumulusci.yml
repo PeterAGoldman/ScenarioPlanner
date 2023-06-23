@@ -119,6 +119,17 @@ flows:
                 options: 
                     command: force:data:tree:export
                     extra: -q "SELECT ID, Name, DeveloperName, SobjectType, Description FROM RecordType" -d datasets 
+
+    assign_permset_crma_user:
+        group: net zero
+        description: extracts username for integration user, the assigns perm set
+        steps:
+            1:
+                task: dx
+                options:
+                    command: force:data:tree:export
+                    extra: -q "SELECT id,Name,Username FROM User WHERE name = 'Integration User'" -d usernames
+
     setup_nzc:
 
         group: net zero
@@ -152,6 +163,19 @@ flows:
             8: # import record type mappings
                 task:  deploy_VhcleAssetEmissionSourceConfigs
 
+    load_data:
+        group: net zero
+        description: loads demo data in the org
+        steps: 
+            1: #load data
+                task: load_buildings
+            1: #load data
+                task: load_vehicles
+            2: #load data
+                task: load_waste
+            3: #load data
+                task: load_scope3procurement
+
     setup_sp:
         group: net zero
         description: This will push unmanaged configuration for SP
@@ -161,4 +185,28 @@ flows:
                 task: dx
                 options: 
                     command: force:source:deploy
-                    extra: -d ./unpackaged
+                    extra: --sourcepath "./force-app/main/default"
+            2:  #permset for Admin
+                task: assign_permission_sets
+                options:
+                    api_names: ESG_Scenario_Planning_Manager
+            3:  #permset for CRMA User
+                task: assign_permission_sets
+                options:
+                    api_names: ESG_Scenario_Planning_Manager
+                    user_alias: integ
+
+
+    Permsets:
+        group: net zero
+        description: test
+        steps:
+            1:
+                task: assign_permission_sets
+                options:
+                    api_names: ESG_Scenario_Planning_Manager
+                    user_alias: integ
+            2:  #permset for Admin
+                task: assign_permission_sets
+                options:
+                    api_names: ESG_Scenario_Planning_Manager

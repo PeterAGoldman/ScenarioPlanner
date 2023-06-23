@@ -5,25 +5,15 @@
                 "type": "RecordType",
                 "referenceId": "RecordTypeRef1"
             },
-            "Name": "Commercial Building",
-            "DeveloperName": "Commercial_Building",
-            "SobjectType": "StnryAssetEnvrSrc",
-            "Description": "Commercial Buildings"
+            "Name": "Building Energy Intensity",
+            "DeveloperName": "Building_Energy_Intensity",
+            "SobjectType": "BldgEnrgyIntensity",
+            "Description": "Use for records created by computing average intensities by using your energy consumption data"
         },
         {
             "attributes": {
                 "type": "RecordType",
                 "referenceId": "RecordTypeRef2"
-            },
-            "Name": "Data Center",
-            "DeveloperName": "Data_Center",
-            "SobjectType": "StnryAssetEnvrSrc",
-            "Description": "Data Centers"
-        },
-        {
-            "attributes": {
-                "type": "RecordType",
-                "referenceId": "RecordTypeRef3"
             },
             "Name": "Regional Building Energy Intensity",
             "DeveloperName": "Regional_Building_Energy_Intensity",
@@ -33,12 +23,22 @@
         {
             "attributes": {
                 "type": "RecordType",
+                "referenceId": "RecordTypeRef3"
+            },
+            "Name": "Commercial Building",
+            "DeveloperName": "Commercial_Building",
+            "SobjectType": "StnryAssetEnvrSrc",
+            "Description": "Commercial Buildings"
+        },
+        {
+            "attributes": {
+                "type": "RecordType",
                 "referenceId": "RecordTypeRef4"
             },
-            "Name": "Building Energy Intensity",
-            "DeveloperName": "Building_Energy_Intensity",
-            "SobjectType": "BldgEnrgyIntensity",
-            "Description": "Use for records created by computing average intensities by using your energy consumption data"
+            "Name": "Data Center",
+            "DeveloperName": "Data_Center",
+            "SobjectType": "StnryAssetEnvrSrc",
+            "Description": "Data Centers"
         },
         {
             "attributes": {

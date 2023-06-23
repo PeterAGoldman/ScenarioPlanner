@@ -1,0 +1,12 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "User",
+                "referenceId": "UserRef1"
+            },
+            "Name": "Integration User",
+            "Username": "integration@00d050000002oiceam.com"
+        }
+    ]
+}

@@ -26,10 +26,6 @@
                 <behavior>Edit</behavior>
                 <field>TotalFloorArea</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Business_Unit__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

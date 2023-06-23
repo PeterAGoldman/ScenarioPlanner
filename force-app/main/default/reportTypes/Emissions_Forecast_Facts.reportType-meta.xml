@@ -226,11 +226,6 @@
             <field>SP_Year_from_Period__c</field>
             <table>EmissionsForecastFact</table>
         </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Business_Unit__c</field>
-            <table>EmissionsForecastFact</table>
-        </columns>
         <masterLabel>Emissions Forecast Facts</masterLabel>
     </sections>
 </ReportType>

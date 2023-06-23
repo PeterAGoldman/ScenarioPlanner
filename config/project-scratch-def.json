@@ -10,11 +10,15 @@
     "ForceComPlatform",
     "RecordTypes",
     "SustainabilityApp",
-    "TCRMForSustainability"
+    "TCRMForSustainability",
+    "DataProcessingEngine"
   ],
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
+    },
+    "productSettings": {
+      "enableRevenueSchedule": true
     },
     "mobileSettings": {
       "enableS1EncryptedStoragePref2": false
@@ -34,6 +38,12 @@
     },
     "languageSettings": {
       "enableTranslationWorkbench": true
+    },
+    "currencySettings":{
+      "enableMultiCurrency": true
+    },
+    "productSettings": {
+      "enableRevenueSchedule": true
     }
   }
 }
