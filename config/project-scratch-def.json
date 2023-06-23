@@ -36,9 +36,6 @@
         "forceRelogin": false
       }
     },
-    "currencySettings":{
-      "enableMultiCurrency": true
-    },
     "productSettings": {
       "enableRevenueSchedule": true
     }

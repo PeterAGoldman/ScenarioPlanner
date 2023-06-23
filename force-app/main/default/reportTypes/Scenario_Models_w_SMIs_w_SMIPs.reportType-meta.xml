@@ -31,11 +31,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>CurrencyIsoCode</field>
-            <table>Scenario_Model__c</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>CreatedDate</field>
             <table>Scenario_Model__c</table>
         </columns>
@@ -155,11 +150,6 @@
         <columns>
             <checkedByDefault>true</checkedByDefault>
             <field>Name</field>
-            <table>Scenario_Model__c.Scenario_Model_Inputs__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CurrencyIsoCode</field>
             <table>Scenario_Model__c.Scenario_Model_Inputs__r</table>
         </columns>
         <columns>
@@ -298,11 +288,6 @@
         <columns>
             <checkedByDefault>true</checkedByDefault>
             <field>Name</field>
-            <table>Scenario_Model__c.Scenario_Model_Inputs__r.Scenario_Model_Input_Periods__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CurrencyIsoCode</field>
             <table>Scenario_Model__c.Scenario_Model_Inputs__r.Scenario_Model_Input_Periods__r</table>
         </columns>
         <columns>

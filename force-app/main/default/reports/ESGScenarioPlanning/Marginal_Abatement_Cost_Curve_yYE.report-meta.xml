@@ -30,7 +30,6 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>Scenario_Model_Input__c.Abatement_Cost_per_tCO2e_Saved__c</field>
     </columns>
-    <currency>USD</currency>
     <format>Summary</format>
     <groupingsDown>
         <aggregateType>Sum</aggregateType>

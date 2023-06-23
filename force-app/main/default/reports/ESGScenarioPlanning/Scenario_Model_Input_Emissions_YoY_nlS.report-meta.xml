@@ -50,7 +50,6 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>Scenario_Model_Input_Period__c.Total_Scenario_Emissions_Savings_tCO2e__c</field>
     </columns>
-    <currency>USD</currency>
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>

@@ -54,7 +54,6 @@
         <aggregateTypes>Sum</aggregateTypes>
         <field>Scenario_Model__c.Scenario_Model_Inputs__r.Scenario_Model_Input_Periods__r$Total_Scenario_Emissions_Savings_tCO2e__c</field>
     </columns>
-    <currency>USD</currency>
     <filter>
         <criteriaItems>
             <column>Scenario_Model__c$Id</column>
