@@ -60,21 +60,21 @@ tasks:
         class_path: cumulusci.tasks.salesforce.Deploy
         group: projectName
         options:
-            path: unpackaged/buildingEnergyIntensityConfigs
+            path: unpackaged/pre/buildingEnergyIntensityConfigs
 
     deploy_StnAssetEnvSourceConfigs:
         description: Deploy Stationary Asset Env Source Record Type configs
         class_path: cumulusci.tasks.salesforce.Deploy
         group: projectName
         options:
-            path: unpackaged/stationaryAssetEnvSourceConfigs
+            path: unpackaged/pre/stationaryAssetEnvSourceConfigs
 
     deploy_VhcleAssetEmissionSourceConfigs:
         description: Deploy Vehicle Asset Emission Source Record Type configs
         class_path: cumulusci.tasks.salesforce.Deploy
         group: projectName
         options:
-            path: unpackaged/vehicleAssetEmssnSourceConfigs
+            path: unpackaged/pre/vehicleAssetEmssnSourceConfigs
     
     # data load tasks 
     load_buildings:
@@ -147,7 +147,7 @@ flows:
                 task: dx
                 options:
                     command: force:source:deploy
-                    extra: -p unpackaged/settings/Industries.settings-meta.xml
+                    extra: -p unpackaged/pre/settings/Industries.settings-meta.xml
             4: # loading record types and the custom external id fields
                 task: dx
                 options: 

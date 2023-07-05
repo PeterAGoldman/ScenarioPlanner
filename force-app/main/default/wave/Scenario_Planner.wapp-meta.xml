@@ -4,7 +4,7 @@
     <masterLabel>Scenario Planner</masterLabel>
     <shares>
         <accessLevel>Manage</accessLevel>
-        <sharedTo>nzccircularityuser@demo.com</sharedTo>
-        <sharedToType>User</sharedToType>
+        <sharedTo>AllInternalUsers</sharedTo>
+        <sharedToType>Organization</sharedToType>
     </shares>
 </WaveApplication>
