@@ -1,66 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Product_Carbon_Footprint_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Product_Carbon_Footprint__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Product_Carbon_Footprint_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Product_Carbon_Footprint__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Scenario_Model_Input_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Scenario_Model_Input__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Scenario_Model_Input_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Scenario_Model_Input__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Scenario_Model_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Scenario_Model__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Scenario_Model_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Scenario_Model__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Tab</actionName>
         <content>Scenario_Planner_Home</content>
         <formFactor>Large</formFactor>
         <skipRecordTypeSelect>false</skipRecordTypeSelect>
         <type>Flexipage</type>
         <pageOrSobjectType>standard-home</pageOrSobjectType>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Product_Carbon_Footprint_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-        <pageOrSobjectType>Product_Carbon_Footprint__c</pageOrSobjectType>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Product_Carbon_Footprint_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-        <pageOrSobjectType>Product_Carbon_Footprint__c</pageOrSobjectType>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Scenario_Model_Input_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-        <pageOrSobjectType>Scenario_Model_Input__c</pageOrSobjectType>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Scenario_Model_Input_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-        <pageOrSobjectType>Scenario_Model_Input__c</pageOrSobjectType>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Scenario_Model_Record_Page</content>
-        <formFactor>Small</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-        <pageOrSobjectType>Scenario_Model__c</pageOrSobjectType>
-    </actionOverrides>
-    <actionOverrides>
-        <actionName>View</actionName>
-        <comment>Action override created by Lightning App Builder during activation.</comment>
-        <content>Scenario_Model_Record_Page</content>
-        <formFactor>Large</formFactor>
-        <skipRecordTypeSelect>false</skipRecordTypeSelect>
-        <type>Flexipage</type>
-        <pageOrSobjectType>Scenario_Model__c</pageOrSobjectType>
     </actionOverrides>
     <brand>
         <headerColor>#0070D2</headerColor>
@@ -83,19 +83,7 @@
     <tabs>Scenario_Model_Input_Period__c</tabs>
     <tabs>Scenario_Variable__c</tabs>
     <tabs>Scenario_Logic_Coefficient__c</tabs>
-    <tabs>standard-Product2</tabs>
     <tabs>Product_Carbon_Footprint__c</tabs>
-    <tabs>standard-StnryAssetEnvrSrc</tabs>
-    <tabs>standard-StnryAssetEnrgyUse</tabs>
-    <tabs>standard-Scope3EmssnSrc</tabs>
-    <tabs>standard-FrgtHaulingEnrgyUse</tabs>
-    <tabs>standard-Scope3PcmtSummary</tabs>
-    <tabs>standard-Scope3PcmtItem</tabs>
-    <tabs>standard-WasteFootprint</tabs>
-    <tabs>standard-GeneratedWaste</tabs>
-    <tabs>standard-AnnualEmssnInventory</tabs>
-    <tabs>standard-EmissionsActivity</tabs>
-    <tabs>standard-EmissionsForecastFact</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>ESG_Scenario_Planner_UtilityBar</utilityBar>
     <workspaceConfig>
@@ -124,49 +112,6 @@
         <mappings>
             <fieldName>Product__c</fieldName>
             <tab>Scenario_Variable__c</tab>
-        </mappings>
-        <mappings>
-            <tab>standard-AnnualEmssnInventory</tab>
-        </mappings>
-        <mappings>
-            <tab>standard-EmissionsActivity</tab>
-        </mappings>
-        <mappings>
-            <fieldName>EmissionsActivityId</fieldName>
-            <tab>standard-EmissionsForecastFact</tab>
-        </mappings>
-        <mappings>
-            <fieldName>Product_Carbon_Footprint__c</fieldName>
-            <tab>standard-FrgtHaulingEnrgyUse</tab>
-        </mappings>
-        <mappings>
-            <fieldName>Product_Carbon_Footprint__c</fieldName>
-            <tab>standard-GeneratedWaste</tab>
-        </mappings>
-        <mappings>
-            <tab>standard-Product2</tab>
-        </mappings>
-        <mappings>
-            <tab>standard-Scope3EmssnSrc</tab>
-        </mappings>
-        <mappings>
-            <fieldName>ProcurementSummaryId</fieldName>
-            <tab>standard-Scope3PcmtItem</tab>
-        </mappings>
-        <mappings>
-            <fieldName>Product_Carbon_Footprint__c</fieldName>
-            <tab>standard-Scope3PcmtSummary</tab>
-        </mappings>
-        <mappings>
-            <fieldName>Product_Carbon_Footprint__c</fieldName>
-            <tab>standard-StnryAssetEnrgyUse</tab>
-        </mappings>
-        <mappings>
-            <tab>standard-StnryAssetEnvrSrc</tab>
-        </mappings>
-        <mappings>
-            <fieldName>StnryAssetEnvrSrcId</fieldName>
-            <tab>standard-WasteFootprint</tab>
         </mappings>
         <mappings>
             <tab>standard-home</tab>

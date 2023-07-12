@@ -1,5 +1,18 @@
 {
-    "packageDirectories": 
-    [{"path": "force-app", "default": true}],
-     "namespace": "nzc_sp", 
-     "sourceApiVersion": "58"}
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true,
+      "package": "ScenarioPlanner0.2",
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
+      "versionDescription": ""
+    }
+  ],
+  "namespace": "nzc_sp",
+  "sourceApiVersion": "58",
+  "packageAliases": {
+    "ScenarioPlanner0.2": "0HoHr0000008OOJKA2",
+    "ScenarioPlanner0.2@0.1.0-1": "04tHr000000ggjpIAA"
+  }
+}
